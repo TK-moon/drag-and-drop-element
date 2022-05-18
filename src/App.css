@@ -1,0 +1,66 @@
+section {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #00B4D8;
+}
+
+#draggableZone {
+  position: relative;
+  width: 80vw;
+  height: 80vh;
+  border: 3px dashed #CAF0F8;
+  border-radius: 15px;
+  transition: background-color 100ms ease-in-out;
+}
+
+#draggableZone:hover {
+  background-color: #90E0EF;
+}
+
+@keyframes drag-box-fadein-keyframe {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.drag-box {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  box-sizing: border-box;
+  padding: 0;
+  border-radius: 10px;
+  background-color: #CAF0F8;
+  color: #314671;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: move;
+  user-select: none;
+  transition: box-shadow 100ms ease-in-out;
+
+  opacity: 0;
+  animation-name: drag-box-fadein-keyframe;
+  animation-duration: 200ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+  animation-delay: 100ms;
+
+  will-change: transform, opacity;
+}
+.drag-box:hover {
+  box-shadow: 0 1px 10px 0 #314671;
+}
+
+.drag-box:active {
+  box-shadow: 0 1px 15px 0 #314671;
+}
